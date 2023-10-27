@@ -1,0 +1,60 @@
+<html>
+<head>
+<title>Laba8</title>
+</head>
+<body style="display: flex; justify-content: center; align-items: center;">
+	<div style="border: 1px solid black; width: 430px; padding: 0px 20px 20px 20px; background-color: white; box-shadow: 10px 10px 0px 0px gray;">
+	
+		<div class="block" style="width: 100%; height: 100px; display: flex; align-items: center; justify-content: space-between; margin: 20px 0px;">
+			<img src="pic.jpg" style="border: 1px solid black; width: 100px; height: 100px;" alt="Картинка">
+			<div>
+				<input type="file" class="file">
+				<input type="button" value="Ввод" onclick="picChange(0)">
+			</div>
+		</div>
+		<hr>
+		<div class="block" style="width: 100%; height: 100px; display: flex; align-items: center; justify-content: space-between; margin: 20px 0px;">
+			<img src="pic.jpg" style="border: 1px solid black; width: 100px; height: 100px;" alt="Картинка">
+			<div>
+				<input type="file" class="file">
+				<input type="button" value="Ввод" onclick="picChange(1)">
+			</div>
+		</div>
+		<hr>
+		<div class="block" style="width: 100%; height: 100px; display: flex; align-items: center; justify-content: space-between; margin: 20px 0px;">
+			<img src="pic.jpg" style="border: 1px solid black; width: 100px; height: 100px;" alt="Картинка">
+			<div>
+				<input type="file" class="file">
+				<input type="button" value="Ввод" onclick="picChange(2)">
+			</div>
+		</div>
+		<hr>
+		<div style="display: flex; justify-content: space-evenly;">
+		<p id="numofpics"></p>
+		<p id="numoflinks"></p>
+		</div>
+		
+		<a href="#">Ссылка 1</a>
+		<a href="#">Ссылка 2</a>
+		<a href="#">Ссылка 3</a>
+		<a href="#">Ссылка 4</a>
+		<a href="#">Ссылка 5</a>
+	</div>
+<script>
+
+(function calcul(){
+let pic = document.getElementById('numofpics');
+let link = document.getElementById('numoflinks');
+pic.innerText = `Кол-во картинок: ${document.images.length}`;
+link.innerText = `Кол-во ссылок: ${document.links.length}`;
+})()
+
+function picChange(num){
+let pic = document.images[num];
+let file = document.getElementsByClassName('file')[num];
+pic.src = file.files[0].name;
+}
+
+</script>
+</body>
+</html>
